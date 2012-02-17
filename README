@@ -1,1 +1,5 @@
-All you need to do is set up your database, include li3_scaffold in libraries.php and you're good to go!
+All you need to do is set up your database,
+include li3_scaffold in libraries.php and you're good to go!
+Li3_scaffold will replace missing controllers, models and views
+so you can focus on getting your database together.
+Not tested on mongo!
