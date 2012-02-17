@@ -16,5 +16,5 @@
 			break;
 	}
 } ?>
-<?=$this->form->submit('Submit'); ?>
+<?=$this->form->submit('Edit'); ?>
 <?=$this->form->end(); ?>
