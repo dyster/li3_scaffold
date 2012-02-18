@@ -7,14 +7,15 @@
 	<table>
 		<thead>
 			<tr>
-				<?php foreach(current($data) as $key => $val) echo "<th>$key</th>"; ?>
+				<?php // foreach(current($data) as $key => $val) echo "<th>$key</th>"; ?>
+				<?php foreach($keys as $key) echo "<th>$key</th>"; ?>
 				<th>Modify</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach($data as $id => $row) { ?>
 			<tr>
-				<?php foreach($row as $val) echo "<td>$val</td>"; ?>
+				<?php foreach($keys as $key) { if(array_key_exists($key, $row)) echo "<td>".$row[$key]."</td>"; else echo '<td></td>'; }?>
 				<td>
 					<?=$this->html->link('Edit', $contrl.'/edit/'.$id);?> |
 					<?=$this->html->link('Delete', $contrl.'/delete/'.$id);?>

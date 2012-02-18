@@ -11,7 +11,14 @@ class ScaffoldController extends \lithium\action\Controller
 	public function index($notice = null) {
 		self::Init();
 		$data = ScaffoldModel::all()->to('array');
-		return compact('data', 'notice');
+
+		$keys = array();
+		foreach($data as $d) {
+			$keys = array_merge($keys, $d);
+		}
+		$keys = array_keys($keys);
+
+		return compact('data', 'notice', 'keys');
 	}
 
 	public function add() {
